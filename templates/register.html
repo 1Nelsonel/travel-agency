@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Add users</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="bg-info">
+<section>
+    <div class="container mt-sm-5 bg-info">
+        <div class="row justify-content-center p-sm-2">
+            <div class="col-sm-5">
+                <form action="register" method="post">
+                    {% csrf_token %}
+                    <div class="form-group">
+                        <label>Enter First name:</label>
+                        <input class="form-control" name="first_name" type="text">
+                        <label>Enter Last name:</label>
+                        <input class="form-control" name="last_name" type="text">
+                        <label>Enter Username:</label>
+                        <input class="form-control" name="username" type="text">
+                        <label>Enter Email</label>
+                        <input class="form-control" name="email" type="email">
+                        <label>Password</label>
+                        <input class="form-control" name="password1" type="password">
+                        <label>Confirm Password</label>
+                        <input class="form-control" name="password2" type="password">
+                    </div>
+                    <div class="form-group">
+                        <input  class="btn btn-center btn-dark" type="submit">
+                    </div>
+                </form>
+            </div>
+            {% for message in messages %}
+
+            <h3> {{message}} </h3>
+
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+</body>
+</html>
